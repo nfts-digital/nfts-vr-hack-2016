@@ -74,13 +74,14 @@ public class change_colour_cs : MonoBehaviour {
 
 # Gaze base interaction
 
-1. Import CardboardSDKforUnity.unitypackage
-2. drag CardboardMain into Scene. Position it at {0,1.75,0}, this is the middle of the scene at eye level.
-3. Disable the previous Main Camera that is still in the scene.
-4. Select CardboardMain -> `Add Component` -> `Physics Raycaster`. We need this components to detect the direction of our gaze.
-5. From Project/Cardboard/Prefabs/UI drag `CardboardReticle` into your VR `Main Camera` so that it becomes a child element.
-6. Download and Import [this skybox package](https://www.assetstore.unity3d.com/#!/content/4042), we'll use these later for the interaction.
-7. Select an object you want to define interaction for. Add component -> new script, call it `GazeBehaviour`. Open the script and copy the following code:
+1. Import CardboardSDKforUnity.unitypackage, if you haven't already.
+2. Create an empty object in your scene, rename it to  "Virtual Me". Position it at {0,1.70,0}, this is the middle of the scene at eye level. 
+3. Drag CardboardMain into this empty game object.
+4. Select the Main Camera that is still in the scene, disable it by unchecking the top left checkbox in inspector. Also disable the Audio listener for this Main Camera.
+5. Inside your "Virtual Me" object, select CardboardMain -> `Add Component` -> `Physics Raycaster`. We need this components to detect the direction of our gaze.
+6. From Project/Cardboard/Prefabs/UI drag `CardboardReticle` into your VR `Main Camera`.
+7. Download and Import [this skybox package](https://www.assetstore.unity3d.com/#!/content/4042), we'll use these later for the interaction.
+8. Drag an object into your scene or select an existing object you want to define interaction for. Add component -> new script, call it `GazeBehaviour`. Open the script and copy the following code:
 
 ```csharp
 using UnityEngine;
